@@ -31,10 +31,134 @@ tags:
   description: "Return the information about the state of a cell"
 - name: "Subscription"
   description: "Handel subscription to object of interest for the user"
+- name: "Workspaces"
+  description: "Return information related to workspaces including individual workspaces, and users and vehicles within that workspace"
+- name: Systems
+  description: Return information regarding a battery system
+- name: Users
+  description: Return information regarding users
 schemes:
 - "https"
 - "http"
 paths:
+  /users/search:
+    get:
+      tags:
+      - Users
+      summary: Return users matching search parameters
+      description: ""
+      operationId: getUserBySearchTerm
+      parameters:
+      - in: query
+        name: firstName
+        type: string
+        description: a first name
+      - in: query
+        name: lastName
+        type: string
+        description: a last name
+      responses:
+        200:
+          description: Successful request
+  /users/{userId}:
+    get:
+      tags:
+      - Users
+      summary: Return the user matching the user id
+      description: ""
+      operationId: getUserByUserId
+      parameters:
+      - in: path
+        name: userId
+        type: string
+        description: the UUID of a specific user1
+        required: true
+      responses:
+        200:
+          description: Successful request
+
+  /workspaces/{workspaceId}:
+    get:
+      tags:
+      - Workspaces
+      summary: Return information about the workspace
+      description: ""
+      operationId: getWorkspace
+      parameters:
+      - in: path
+        type: integer
+        name: workspace id
+        description: The id of a specific workspace
+        required: true
+      responses:
+        "200":
+          description: Successful request
+          schema:
+            $ref: "#/definitions/Workspace"
+  /systems/{systemId}/devices:
+    get:
+      tags:
+      - Systems
+      summary: Return a list of all devices attached to the battery system
+      description: ""
+      operationId: getSystemDevices
+      parameters:
+      - in: path
+        type: integer
+        name: system id
+        description: the id of a specific system
+        required: true
+      responses:
+        200:
+          description: "Successful request"
+  /systems/{systemId}/storagedevices:
+    get:
+      tags:
+      - Systems
+      summary: Return a list of all storage devices attached to the battery system
+      description: ""
+      operationId: getSystemStorageDevices
+      parameters:
+      - in: path
+        type: integer
+        name: system id
+        description: the id of a specific system
+        required: true
+      responses:
+        200:
+          description: "Successful request"
+  /systems/{systemId}/consumerdevices:
+    get:
+      tags:
+      - Systems
+      summary: Return a list of all power Consumption devices attached to the battery system
+      description: ""
+      operationId: getSystemConsumerDevices
+      parameters:
+      - in: path
+        type: integer
+        name: system id
+        description: the id of a specific system
+        required: true
+      responses:
+        200:
+          description: "Successful request"
+  /systems/{systemId}/producerdevices:
+    get:
+      tags:
+      - Systems
+      summary: Return a list of all power producer devices attached to the battery system
+      description: ""
+      operationId: getSystemProducerDevices
+      parameters:
+      - in: path
+        type: integer
+        name: system id
+        description: the id of a specific system
+        required: true
+      responses:
+        200:
+          description: "Successful request"
   /{organisation}/vehicles:
     get:
       tags:
@@ -86,7 +210,7 @@ paths:
       # - petstore_auth:
       #   - "write:pets"
       #   - "read:pets"
-  /{organisation}/{vehcileId}:
+  /{organisation}/{vehicleId}:
     get:
       tags:
       - "Vehicles"
@@ -1521,6 +1645,39 @@ definitions:
         - "out of service"
     xml:
       name: "Vehicle"
+  Workspace:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+        example: Team Arrow firmware
+      users:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+            first name:
+              type: string
+            last name:
+              type: string
+      systems:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            
+
+
+
+
   ApiResponse:
     type: "object"
     properties:
