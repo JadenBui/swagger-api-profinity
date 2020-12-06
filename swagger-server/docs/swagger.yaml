@@ -31,8 +31,10 @@ tags:
   description: "Return the information about the state of a cell"
 - name: "Subscription"
   description: "Handel subscription to object of interest for the user"
-- name: "Workspaces"
-  description: "Return information related to workspaces including individual workspaces, and users and vehicles within that workspace"
+- name: Organisations
+  description: Return information related to organisations
+- name: Workspaces
+  description: Return information related to workspaces including individual workspaces, and users and vehicles within that workspace
 - name: Systems
   description: Return information regarding a battery system
 - name: Users
@@ -76,7 +78,6 @@ paths:
       responses:
         200:
           description: Successful request
-
   /workspaces/{workspaceId}:
     get:
       tags:
@@ -87,7 +88,7 @@ paths:
       parameters:
       - in: path
         type: integer
-        name: workspace id
+        name: workspaceId
         description: The id of a specific workspace
         required: true
       responses:
@@ -105,7 +106,7 @@ paths:
       parameters:
       - in: path
         type: integer
-        name: system id
+        name: systemId
         description: the id of a specific system
         required: true
       responses:
@@ -121,8 +122,60 @@ paths:
       parameters:
       - in: path
         type: integer
-        name: system id
+        name: systemId
         description: the id of a specific system
+        required: true
+      responses:
+        200:
+          description: "Successful request"
+  /systems/{systemId}/storagedevices/{storageUnitId}:
+    get:
+      tags:
+      - Systems
+      summary: Reutrn detaisl about a specific storage device attached to a battery system
+      description: ""
+      operationId: getSystemStorageDeviceById
+      parameters:
+      - in: path
+        type: integer
+        name: systemId
+        description: The id of a specific system
+        required: true
+      - in: path
+        type: integer
+        name: storageUnitId
+        description: the id of a specific storage unit
+        required: true
+      responses:
+        200:
+          description: "Successful request"
+  /systems/{systemId}/storagedevices/{storageUnitId}/history:
+    get:
+      tags:
+      - Systems
+      summary: Return the storage history of the storage unit between the specified date
+      description: ""
+      operationId: getSystemStorageHistoryByUnitId
+      parameters:
+      - in: path
+        type: integer
+        name: systemId
+        description: The id of a specific system
+        required: true
+      - in: path
+        type: integer
+        name: storageUnitId
+        description: the id of a specific storage unit
+        required: true
+      - in: query
+        type: string
+        name: from
+        description: the inclusive 'from' date time in UTC format
+        required: true
+      - in: query
+        type: string
+        name: to
+        description: the inclusive 'to' date time in UTC format
         required: true
       responses:
         200:
@@ -143,6 +196,58 @@ paths:
       responses:
         200:
           description: "Successful request"
+  /systems/{systemId}/consumerdevices/{consumerUnitId}:
+    get:
+      tags:
+      - Systems
+      summary: Return details about a specific consumer device attached to a battery system
+      description: ""
+      operationId: getSystemConsumerDeviceById
+      parameters:
+      - in: path
+        type: integer
+        name: systemId
+        description: The id of a specific system
+        required: true
+      - in: path
+        type: integer
+        name: consumerUnitId
+        description: the id of a specific consumer unit
+        required: true
+      responses:
+        200:
+          description: "Successful request"
+  /systems/{systemId}/consumerdevices/{consumerUnitId}/history:
+    get:
+      tags:
+      - Systems
+      summary: Return the consumption history of the consumer unit between the specified date
+      description: ""
+      operationId: getSystemConsumerHistoryByUnitId
+      parameters:
+      - in: path
+        type: integer
+        name: systemId
+        description: The id of a specific system
+        required: true
+      - in: path
+        type: integer
+        name: consumerUnitId
+        description: the id of a specific consumption unit
+        required: true
+      - in: query
+        type: string
+        name: from
+        description: the inclusive 'from' date time in UTC format
+        required: true
+      - in: query
+        type: string
+        name: to
+        description: the inclusive 'to' date time in UTC format
+        required: true
+      responses:
+        200:
+          description: "Successful request"
   /systems/{systemId}/producerdevices:
     get:
       tags:
@@ -155,6 +260,58 @@ paths:
         type: integer
         name: system id
         description: the id of a specific system
+        required: true
+      responses:
+        200:
+          description: "Successful request"
+  /systems/{systemId}/producerdevices/{producerUnitId}:
+    get:
+      tags:
+      - Systems
+      summary: Return details about a specific producer device attached to a battery system
+      description: ""
+      operationId: getSystemProducerDeviceById
+      parameters:
+      - in: path
+        type: integer
+        name: systemId
+        description: The id of a specific system
+        required: true
+      - in: path
+        type: integer
+        name: producerUnitId
+        description: the id of a specific producer unit
+        required: true
+      responses:
+        200:
+          description: "Successful request"
+  /systems/{systemId}/producerdevices/{producerUnitId}/history:
+    get:
+      tags:
+      - Systems
+      summary: Return the consumption history of the producer unit between the specified date
+      description: ""
+      operationId: getSystemConsumerHistoryByUnitId
+      parameters:
+      - in: path
+        type: integer
+        name: systemId
+        description: The id of a specific system
+        required: true
+      - in: path
+        type: integer
+        name: producerUnitId
+        description: the id of a specific conproducer unit
+        required: true
+      - in: query
+        type: string
+        name: from
+        description: the inclusive 'from' date time in UTC format
+        required: true
+      - in: query
+        type: string
+        name: to
+        description: the inclusive 'to' date time in UTC format
         required: true
       responses:
         200:
