@@ -73,7 +73,7 @@ paths:
       - in: path
         name: userId
         type: string
-        description: the UUID of a specific user1
+        description: the UUID of a specific user
         required: true
       responses:
         200:
@@ -316,17 +316,18 @@ paths:
       responses:
         200:
           description: "Successful request"
-  /{organisation}/vehicles:
+  /organisations/{organisationId}/systems:
     get:
       tags:
-      - "Vehicles"
-      summary: "Return the information about all of the vehciles from an organisation"
+      - Organisations
+      summary: Return the information about all of the battery systems of an organisation
       description: ""
-      operationId: "getVehicles"
+      operationId: getSystemsByOrganisationId
       parameters:
-      - in: "string"
-        name: "organisation"
-        description: "The name of the organisation"
+      - in: path
+        type: integer
+        name: organisationId
+        description: An organisation's unique id
         required: true
       responses:
         "200":
@@ -337,57 +338,57 @@ paths:
       # - petstore_auth:
       #   - "write:pets"
       #   - "read:pets"
-    post:
-      tags:
-      - "Vehicles"
-      summary: "Add new vehicles to the organisation"
-      description: ""
-      operationId: "postVehicles"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "string"
-        name: "organisation"
-        description: "The name of the organisation"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "An array of Vehicle objects"
-        required: true
-        schema:
-          $ref: "#/definitions/Vehicles"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /{organisation}/{vehicleId}:
-    get:
-      tags:
-      - "Vehicles"
-      summary: "Return the information about a vehicle from an organisation"
-      description: ""
-      operationId: "getVehicle"
-      parameters:
-      - in: "string"
-        name: "organisation"
-        description: "The name of the organisation"
-        required: true
-      - in: "integer"
-        name: "vehicleId"
-        description: "The motor controller ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/Vehicle"
+  #   post:
+  #     tags:
+  #     - Systems
+  #     summary: Add a new system to the organisation
+  #     description: ""
+  #     operationId: "postVehicles"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "string"
+  #       name: "organisation"
+  #       description: "The name of the organisation"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "An array of Vehicle objects"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/Vehicles"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{organisation}/{systemId}:
+  #   get:
+  #     tags:
+  #     - "Vehicles"
+  #     summary: "Return the information about a vehicle from an organisation"
+  #     description: ""
+  #     operationId: "getVehicle"
+  #     parameters:
+  #     - in: "string"
+  #       name: "organisation"
+  #       description: "The name of the organisation"
+  #       required: true
+  #     - in: "integer"
+  #       name: "vehicleId"
+  #       description: "The motor controller ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/Vehicle"
       # security:
       # - petstore_auth:
       #   - "write:pets"
