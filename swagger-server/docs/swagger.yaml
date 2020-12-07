@@ -7,30 +7,30 @@ info:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 tags:
-- name: "Vehicles"
-  description: "Return the information about an organisation vehicles"
-- name: "Motor Controllers"
-  description: "Return the information about an organisation motor controllers"
-- name: "Motor State"
-  description: "Return the information about the motor state of an controller"
-- name: "Charger"
-  description: "Return the information about the charger of a vehicle"
-- name: "Charger State"
-  description: "Return the information about the charger state of a charger"
-- name: "Battery Management Unit (BMU)"
-  description: "Return the information about the battery management unit of a vehicle"
-- name: "Battery State of Health (SOh)"
-  description: "Return the information about the State of Health of a battery"
-- name: "Cell Monitor Unit (CMU)"
-  description: "Return the information about the Cell Monitor Unit of a batter"
-- name: "Cell State of Health"
-  description: "Return the information about the state of health of a cell"
-- name: "Cells"
-  description: "Return the information about the cells of a battery"  
-- name: "Cell State"
-  description: "Return the information about the state of a cell"
-- name: "Subscription"
-  description: "Handel subscription to object of interest for the user"
+# - name: "Vehicles"
+#   description: "Return the information about an organisation vehicles"
+# - name: "Motor Controllers"
+#   description: "Return the information about an organisation motor controllers"
+# - name: "Motor State"
+#   description: "Return the information about the motor state of an controller"
+# - name: "Charger"
+#   description: "Return the information about the charger of a vehicle"
+# - name: "Charger State"
+#   description: "Return the information about the charger state of a charger"
+# - name: "Battery Management Unit (BMU)"
+#   description: "Return the information about the battery management unit of a vehicle"
+# - name: "Battery State of Health (SOh)"
+#   description: "Return the information about the State of Health of a battery"
+# - name: "Cell Monitor Unit (CMU)"
+#   description: "Return the information about the Cell Monitor Unit of a batter"
+# - name: "Cell State of Health"
+#   description: "Return the information about the state of health of a cell"
+# - name: "Cells"
+#   description: "Return the information about the cells of a battery"  
+# - name: "Cell State"
+#   description: "Return the information about the state of a cell"
+# - name: "Subscription"
+#   description: "Handel subscription to object of interest for the user"
 - name: Organisations
   description: Return information related to organisations
 - name: Workspaces
@@ -1803,6 +1803,63 @@ definitions:
   #       - "out of service"
   #   xml:
   #     name: "Vehicle"
+  System:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      devices:
+        type: array
+  Base Devices:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        type:
+          type: string
+        manufactureDate:
+          type: string
+        mainFacility:
+          type: string
+        capabilities:
+          type: array
+          items:
+            type: object
+            properties:
+              description:
+                type: string
+              value:
+                type: string
+  Power Storage Device:
+    type: object
+    properties:
+      id:
+        type: integer
+      rechargeCount:
+        type: integer
+  Power Producer Device:
+    type: object
+    properties:
+      id:
+        type: integer
+      rechargeCount:
+        type: integer
+
+
+            
+
+
+
+
+
   Workspace:
     type: object
     properties:
