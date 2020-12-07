@@ -393,951 +393,951 @@ paths:
       # - petstore_auth:
       #   - "write:pets"
       #   - "read:pets"
-    put:
-      tags:
-      - "Vehicles"
-      summary: "Update an existing vehicle information"
-      description: ""
-      operationId: "updateVehicle"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "string"
-        name: "organisation"
-        description: "The name of the organisation"
-        required: true
-      - in: "integer"
-        name: "vehcileId"
-        description: "The vehicle ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "A new vehicle object with the updated properties"
-        required: true
-        schema:
-          $ref: "#/definitions/Vehicle"
-      responses:
-        "200":
-          description: "Successful request"
+    # put:
+    #   tags:
+    #   - "Vehicles"
+    #   summary: "Update an existing vehicle information"
+    #   description: ""
+    #   operationId: "updateVehicle"
+    #   consumes:
+    #   - "application/json"
+    #   - "application/xml"
+    #   produces:
+    #   - "application/xml"
+    #   - "application/json"
+    #   parameters:
+    #   - in: "string"
+    #     name: "organisation"
+    #     description: "The name of the organisation"
+    #     required: true
+    #   - in: "integer"
+    #     name: "vehcileId"
+    #     description: "The vehicle ID"
+    #     required: true
+    #   - in: "body"
+    #     name: "body"
+    #     description: "A new vehicle object with the updated properties"
+    #     required: true
+    #     schema:
+    #       $ref: "#/definitions/Vehicle"
+    #   responses:
+    #     "200":
+    #       description: "Successful request"
       # security:
       # - petstore_auth:
       #   - "write:pets"
       #   - "read:pets"
-  /{organisation}/motor-controllers:
-    get:
-      tags:
-      - "Motor Controllers"
-      summary: "Return the information about all of the motor controllers from an organisation"
-      description: ""
-      operationId: "getMotorControllers"
-      parameters:
-      - in: "string"
-        name: "organisation"
-        description: "The name of the organisation"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/MotorControllers"
+  # /{organisation}/motor-controllers:
+  #   get:
+  #     tags:
+  #     - "Motor Controllers"
+  #     summary: "Return the information about all of the motor controllers from an organisation"
+  #     description: ""
+  #     operationId: "getMotorControllers"
+  #     parameters:
+  #     - in: "string"
+  #       name: "organisation"
+  #       description: "The name of the organisation"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/MotorControllers"
       # security:
       # - petstore_auth:
       #   - "write:pets"
       #   - "read:pets"
-    post:
-      tags:
-      - "Motor Controllers"
-      summary: "Add new motor controllers to the organisation"
-      description: ""
-      operationId: "postMotorControllers"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "string"
-        name: "organisation"
-        description: "The name of the organisation"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "An array of motor controller object IDs"
-        required: true
-        schema:
-          $ref: "#/definitions/MotorControllers"
-      responses:
-        "200":
-          description: "Successful request"
+  #   post:
+  #     tags:
+  #     - "Motor Controllers"
+  #     summary: "Add new motor controllers to the organisation"
+  #     description: ""
+  #     operationId: "postMotorControllers"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "string"
+  #       name: "organisation"
+  #       description: "The name of the organisation"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "An array of motor controller object IDs"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/MotorControllers"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{organisation}/{motorControllerId}:
+  #   get:
+  #     tags:
+  #     - "Motor Controllers"
+  #     summary: "Return the information about a motor controller from an organisation"
+  #     description: ""
+  #     operationId: "getMotoController"
+  #     parameters:
+  #     - in: "string"
+  #       name: "organisation"
+  #       description: "The name of the organisation"
+  #       required: true
+  #     - in: "integer"
+  #       name: "motorControllerId"
+  #       description: "The motor controller ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/MotorController"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  #   put:
+  #     tags:
+  #     - "Motor Controllers"
+  #     summary: "Update an existing motor controller information"
+  #     description: ""
+  #     operationId: "updateMotorController"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "string"
+  #       name: "organisation"
+  #       description: "The name of the organisation"
+  #       required: true
+  #     - in: "integer"
+  #       name: "motorControllerId"
+  #       description: "The motor controller ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "A new motor controller object with the updated properties"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/MotorController"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{vehcileId}/bmus:
+  #   get:
+  #     tags:
+  #     - "Battery Management Unit (BMU)"
+  #     summary: "Return the information about all the battery management unit of a vehicle"
+  #     description: ""
+  #     operationId: "getBatteryManagementUnits"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "vehicleId"
+  #       description: "The vehicle ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/BMUs"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  #   post:
+  #     tags:
+  #     - "Battery Management Unit (BMU)"
+  #     summary: "Add new battery management units to the vehcile"
+  #     description: ""
+  #     operationId: "postBatteryManagementUnits"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "string"
+  #       name: "vehicleId"
+  #       description: "The vehcile ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "An array of battery management unit object IDs"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/BMUs"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{vehcileId}/{bmuId}:
+  #   get:
+  #     tags:
+  #     - "Battery Management Unit (BMU)"
+  #     summary: "Return the information about the battery management unit of a vehicle"
+  #     description: ""
+  #     operationId: "getBatteryManagementUnit"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "vehicleId"
+  #       description: "The vehicle ID"
+  #       required: true
+  #     - in: "integer"
+  #       name: "bmuId"
+  #       description: "The Battery Management Unit ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/BMU"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  #   put:
+  #     tags:
+  #     - "Battery Management Unit (BMU)"
+  #     summary: "Update an existing battery management unit information"
+  #     description: ""
+  #     operationId: "updateBatteryManagementUnit"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "vehcileId"
+  #       description: "The vehcile ID"
+  #       required: true
+  #     - in: "integer"
+  #       name: "bmuId"
+  #       description: "The Battery Management Unit ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "A new battery management unit object with the updated properties"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/BMU"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{motorId}/motor-state:
+  #   get:
+  #     tags:
+  #     - "Motor State"
+  #     summary: "Return the information about the motor state of a motor controller"
+  #     description: ""
+  #     operationId: "getMotorState"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "motorId"
+  #       description: "The motor ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/MotorState"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  #   put:
+  #     tags:
+  #     - "Motor State"
+  #     summary: "Update an existing motor state of a motor controller"
+  #     description: ""
+  #     operationId: "updateMotorState"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "motorId"
+  #       description: "The motor ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "A new battery management unit object with the updated properties"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/MotorState"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{vehicleId}/chargers:
+  #   get:
+  #     tags:
+  #     - "Charger"
+  #     summary: "Return the information about all the charger of a vehcile"
+  #     description: ""
+  #     operationId: "getChargers"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "vehcileId"
+  #       description: "The vehicle ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/Charger"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  #   post:
+  #     tags:
+  #     - "Charger"
+  #     summary: "Add chargers to a vehcile"
+  #     description: ""
+  #     operationId: "postChargers"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "vehcileId"
+  #       description: "The vehcile ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "An array of charger objects"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/Chargers"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{vehicleId}/{chargerId}:
+  #   get:
+  #     tags:
+  #     - "Charger"
+  #     summary: "Return the information about a charger of a vehcile"
+  #     description: ""
+  #     operationId: "getCharger"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "vehcileId"
+  #       description: "The vehicle ID"
+  #       required: true
+  #     - in: "integer"
+  #       name: "chargerId"
+  #       description: "The charger ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/Charger"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  #   put:
+  #     tags:
+  #     - "Charger"
+  #     summary: "Update an existing charger information of a vehcile"
+  #     description: ""
+  #     operationId: "updateCharger"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "vehcileId"
+  #       description: "The vehcile ID"
+  #       required: true
+  #     - in: "integer"
+  #       name: "chargerId"
+  #       description: "The charger ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "A new charger object with the updated properties"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/Charger"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{chargerId}/charger-state:
+  #   get:
+  #     tags:
+  #     - "Charger State"
+  #     summary: "Return the information about the charger state of a charger"
+  #     description: ""
+  #     operationId: "getChargerState"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "chargerId"
+  #       description: "The charger ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/ChargerState"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  #   put:
+  #     tags:
+  #     - "Charger State"
+  #     summary: "Update an existing charger state of a charger"
+  #     description: ""
+  #     operationId: "updateChargerState"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "chargerId"
+  #       description: "The charger ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "A new charger state object with the updated properties"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/ChargerState"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{vehicleId}/bmu/battersoh:
+  #   get:
+  #     tags:
+  #     - "Battery State of Health (SOh)"
+  #     summary: "Return the information about the health state of a battery"
+  #     description: ""
+  #     operationId: "getBatteryStateOfHealth"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "vehcileId"
+  #       description: "The vehicle ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/BatterySOh"
       # security:
       # - petstore_auth:
       #   - "write:pets"
       #   - "read:pets"
-  /{organisation}/{motorControllerId}:
-    get:
-      tags:
-      - "Motor Controllers"
-      summary: "Return the information about a motor controller from an organisation"
-      description: ""
-      operationId: "getMotoController"
-      parameters:
-      - in: "string"
-        name: "organisation"
-        description: "The name of the organisation"
-        required: true
-      - in: "integer"
-        name: "motorControllerId"
-        description: "The motor controller ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/MotorController"
+  #   put:
+  #     tags:
+  #     - "Battery State of Health (SOh)"
+  #     summary: "Update an existing health state of a battery"
+  #     description: ""
+  #     operationId: "updateBatteryStateOfHealth"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "vehicleId"
+  #       description: "The vehcile ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "A new battery state of health object with the updated properties"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/BatterySOh"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{bmuId}/cmus:
+  #   get:
+  #     tags:
+  #     - "Cell Monitor Unit (CMU)"
+  #     summary: "Return the information about all the cell monitor unit of a battery management unit"
+  #     description: ""
+  #     operationId: "getCellMonitorUnits"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "bmuId"
+  #       description: "The Battery Management Unit ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/CMUs"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  #   post:
+  #     tags:
+  #     - "Cell Monitor Unit (CMU)"
+  #     summary: "Add new cell monitor units to the battery management unit"
+  #     description: ""
+  #     operationId: "postCellMonitorUnits"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "string"
+  #       name: "bmuId"
+  #       description: "The Battery Management Unit ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "An array of cell monitory unit IDs"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/CMUs"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{bmuId}/{cmuId}:
+  #   get:
+  #     tags:
+  #     - "Cell Monitor Unit (CMU)"
+  #     summary: "Return the information about a cell monitor unit of a battery management unit"
+  #     description: ""
+  #     operationId: "getCellMonitorUnit"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "bmuId"
+  #       description: "The Battery Management Unit ID"
+  #       required: true
+  #     - in: "integer"
+  #       name: "cmuId"
+  #       description: "The Cell Monitor Unit ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/CMU"
       # security:
       # - petstore_auth:
       #   - "write:pets"
       #   - "read:pets"
-    put:
-      tags:
-      - "Motor Controllers"
-      summary: "Update an existing motor controller information"
-      description: ""
-      operationId: "updateMotorController"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "string"
-        name: "organisation"
-        description: "The name of the organisation"
-        required: true
-      - in: "integer"
-        name: "motorControllerId"
-        description: "The motor controller ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "A new motor controller object with the updated properties"
-        required: true
-        schema:
-          $ref: "#/definitions/MotorController"
-      responses:
-        "200":
-          description: "Successful request"
+  #   put:
+  #     tags:
+  #     - "Cell Monitor Unit (CMU)"
+  #     summary: "Update an existing cell monitor unit information"
+  #     description: ""
+  #     operationId: "updateCellMonitorUnit"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "bmuId"
+  #       description: "The Battery Management Unit ID"
+  #       required: true
+  #     - in: "integer"
+  #       name: "cmuId"
+  #       description: "The Cell Monitor Unit ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "A new cell monitor unit object with the updated properties"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/CMU"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{bmuId}/{cmuId}/cellsoh:
+  #   get:
+  #     tags:
+  #     - "Cell State of Health"
+  #     summary: "Return the inforamtion about the health state of a cell"
+  #     description: ""
+  #     operationId: "getCellStateOfHealth"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "bmuId"
+  #       description: "The Battery Management Unit ID"
+  #       required: true
+  #     - in: "integer"
+  #       name: "cmuId"
+  #       description: "The Cell Monitor Unit ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/CellSoh"
       # security:
       # - petstore_auth:
       #   - "write:pets"
       #   - "read:pets"
-  /{vehcileId}/bmus:
-    get:
-      tags:
-      - "Battery Management Unit (BMU)"
-      summary: "Return the information about all the battery management unit of a vehicle"
-      description: ""
-      operationId: "getBatteryManagementUnits"
-      parameters:
-      - in: "integer"
-        name: "vehicleId"
-        description: "The vehicle ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/BMUs"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    post:
-      tags:
-      - "Battery Management Unit (BMU)"
-      summary: "Add new battery management units to the vehcile"
-      description: ""
-      operationId: "postBatteryManagementUnits"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "string"
-        name: "vehicleId"
-        description: "The vehcile ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "An array of battery management unit object IDs"
-        required: true
-        schema:
-          $ref: "#/definitions/BMUs"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /{vehcileId}/{bmuId}:
-    get:
-      tags:
-      - "Battery Management Unit (BMU)"
-      summary: "Return the information about the battery management unit of a vehicle"
-      description: ""
-      operationId: "getBatteryManagementUnit"
-      parameters:
-      - in: "integer"
-        name: "vehicleId"
-        description: "The vehicle ID"
-        required: true
-      - in: "integer"
-        name: "bmuId"
-        description: "The Battery Management Unit ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/BMU"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    put:
-      tags:
-      - "Battery Management Unit (BMU)"
-      summary: "Update an existing battery management unit information"
-      description: ""
-      operationId: "updateBatteryManagementUnit"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "integer"
-        name: "vehcileId"
-        description: "The vehcile ID"
-        required: true
-      - in: "integer"
-        name: "bmuId"
-        description: "The Battery Management Unit ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "A new battery management unit object with the updated properties"
-        required: true
-        schema:
-          $ref: "#/definitions/BMU"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /{motorId}/motor-state:
-    get:
-      tags:
-      - "Motor State"
-      summary: "Return the information about the motor state of a motor controller"
-      description: ""
-      operationId: "getMotorState"
-      parameters:
-      - in: "integer"
-        name: "motorId"
-        description: "The motor ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/MotorState"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    put:
-      tags:
-      - "Motor State"
-      summary: "Update an existing motor state of a motor controller"
-      description: ""
-      operationId: "updateMotorState"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "integer"
-        name: "motorId"
-        description: "The motor ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "A new battery management unit object with the updated properties"
-        required: true
-        schema:
-          $ref: "#/definitions/MotorState"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /{vehicleId}/chargers:
-    get:
-      tags:
-      - "Charger"
-      summary: "Return the information about all the charger of a vehcile"
-      description: ""
-      operationId: "getChargers"
-      parameters:
-      - in: "integer"
-        name: "vehcileId"
-        description: "The vehicle ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/Charger"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    post:
-      tags:
-      - "Charger"
-      summary: "Add chargers to a vehcile"
-      description: ""
-      operationId: "postChargers"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "integer"
-        name: "vehcileId"
-        description: "The vehcile ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "An array of charger objects"
-        required: true
-        schema:
-          $ref: "#/definitions/Chargers"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /{vehicleId}/{chargerId}:
-    get:
-      tags:
-      - "Charger"
-      summary: "Return the information about a charger of a vehcile"
-      description: ""
-      operationId: "getCharger"
-      parameters:
-      - in: "integer"
-        name: "vehcileId"
-        description: "The vehicle ID"
-        required: true
-      - in: "integer"
-        name: "chargerId"
-        description: "The charger ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/Charger"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    put:
-      tags:
-      - "Charger"
-      summary: "Update an existing charger information of a vehcile"
-      description: ""
-      operationId: "updateCharger"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "integer"
-        name: "vehcileId"
-        description: "The vehcile ID"
-        required: true
-      - in: "integer"
-        name: "chargerId"
-        description: "The charger ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "A new charger object with the updated properties"
-        required: true
-        schema:
-          $ref: "#/definitions/Charger"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /{chargerId}/charger-state:
-    get:
-      tags:
-      - "Charger State"
-      summary: "Return the information about the charger state of a charger"
-      description: ""
-      operationId: "getChargerState"
-      parameters:
-      - in: "integer"
-        name: "chargerId"
-        description: "The charger ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/ChargerState"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    put:
-      tags:
-      - "Charger State"
-      summary: "Update an existing charger state of a charger"
-      description: ""
-      operationId: "updateChargerState"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "integer"
-        name: "chargerId"
-        description: "The charger ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "A new charger state object with the updated properties"
-        required: true
-        schema:
-          $ref: "#/definitions/ChargerState"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /{vehicleId}/bmu/battersoh:
-    get:
-      tags:
-      - "Battery State of Health (SOh)"
-      summary: "Return the information about the health state of a battery"
-      description: ""
-      operationId: "getBatteryStateOfHealth"
-      parameters:
-      - in: "integer"
-        name: "vehcileId"
-        description: "The vehicle ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/BatterySOh"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    put:
-      tags:
-      - "Battery State of Health (SOh)"
-      summary: "Update an existing health state of a battery"
-      description: ""
-      operationId: "updateBatteryStateOfHealth"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "integer"
-        name: "vehicleId"
-        description: "The vehcile ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "A new battery state of health object with the updated properties"
-        required: true
-        schema:
-          $ref: "#/definitions/BatterySOh"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /{bmuId}/cmus:
-    get:
-      tags:
-      - "Cell Monitor Unit (CMU)"
-      summary: "Return the information about all the cell monitor unit of a battery management unit"
-      description: ""
-      operationId: "getCellMonitorUnits"
-      parameters:
-      - in: "integer"
-        name: "bmuId"
-        description: "The Battery Management Unit ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/CMUs"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    post:
-      tags:
-      - "Cell Monitor Unit (CMU)"
-      summary: "Add new cell monitor units to the battery management unit"
-      description: ""
-      operationId: "postCellMonitorUnits"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "string"
-        name: "bmuId"
-        description: "The Battery Management Unit ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "An array of cell monitory unit IDs"
-        required: true
-        schema:
-          $ref: "#/definitions/CMUs"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /{bmuId}/{cmuId}:
-    get:
-      tags:
-      - "Cell Monitor Unit (CMU)"
-      summary: "Return the information about a cell monitor unit of a battery management unit"
-      description: ""
-      operationId: "getCellMonitorUnit"
-      parameters:
-      - in: "integer"
-        name: "bmuId"
-        description: "The Battery Management Unit ID"
-        required: true
-      - in: "integer"
-        name: "cmuId"
-        description: "The Cell Monitor Unit ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/CMU"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    put:
-      tags:
-      - "Cell Monitor Unit (CMU)"
-      summary: "Update an existing cell monitor unit information"
-      description: ""
-      operationId: "updateCellMonitorUnit"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "integer"
-        name: "bmuId"
-        description: "The Battery Management Unit ID"
-        required: true
-      - in: "integer"
-        name: "cmuId"
-        description: "The Cell Monitor Unit ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "A new cell monitor unit object with the updated properties"
-        required: true
-        schema:
-          $ref: "#/definitions/CMU"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /{bmuId}/{cmuId}/cellsoh:
-    get:
-      tags:
-      - "Cell State of Health"
-      summary: "Return the inforamtion about the health state of a cell"
-      description: ""
-      operationId: "getCellStateOfHealth"
-      parameters:
-      - in: "integer"
-        name: "bmuId"
-        description: "The Battery Management Unit ID"
-        required: true
-      - in: "integer"
-        name: "cmuId"
-        description: "The Cell Monitor Unit ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/CellSoh"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    put:
-      tags:
-      - "Cell State of Health"
-      summary: "Update an existing health state of a cell"
-      description: ""
-      operationId: "updateCellStateOfHealth"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "integer"
-        name: "bmuId"
-        description: "The Battery Management Unit ID"
-        required: true
-      - in: "integer"
-        name: "cmuId"
-        description: "The Cell Monitor Unit ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "A new battery state of health object with the updated properties"
-        required: true
-        schema:
-          $ref: "#/definitions/CellSoh"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /{cmuId}/cells:
-    get:
-      tags:
-      - "Cells"
-      summary: "Return the information about all the cell of a cell monitor unit"
-      description: ""
-      operationId: "getCells"
-      parameters:
-      - in: "integer"
-        name: "cmuId"
-        description: "The Cell Monitor Unit ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/Cells"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    post:
-      tags:
-      - "Cells"
-      summary: "Add new cells to the cell monitor unit"
-      description: ""
-      operationId: "postCells"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "string"
-        name: "cmuId"
-        description: "The Cell Monitor Unit ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "An array of cell IDs"
-        required: true
-        schema:
-          $ref: "#/definitions/Cells"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /{cmuId}/{cellId}:
-    get:
-      tags:
-      - "Cells"
-      summary: "Return the information about a cell of a cell monitor unit"
-      description: ""
-      operationId: "getCell"
-      parameters:
-      - in: "integer"
-        name: "cmuId"
-        description: "The Cell Monitor Unit ID"
-        required: true
-      - in: "integer"
-        name: "cellId"
-        description: "The Cell ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/Cell"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    put:
-      tags:
-      - "Cells"
-      summary: "Update an existing cell information"
-      description: ""
-      operationId: "updateCell"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "integer"
-        name: "cmuId"
-        description: "The Cell Monitor Unit ID"
-        required: true
-      - in: "integer"
-        name: "cellId"
-        description: "The Cell ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "A new cell object with the updated properties"
-        required: true
-        schema:
-          $ref: "#/definitions/Cell"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /{cellId}/cell-state:
-    get:
-      tags:
-      - "Cell State"
-      summary: "Return the information about the cell state of a cell"
-      description: ""
-      operationId: "getCellState"
-      parameters:
-      - in: "integer"
-        name: "cellId"
-        description: "The cell ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          schema:
-            $ref: "#/definitions/CellState"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    put:
-      tags:
-      - "Cell State"
-      summary: "Update an existing cell state of a cell"
-      description: ""
-      operationId: "updateCellState"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "integer"
-        name: "cellId"
-        description: "The cell ID"
-        required: true
-      - in: "body"
-        name: "body"
-        description: "A new cell state object with the updated properties"
-        required: true
-        schema:
-          $ref: "#/definitions/CellState"
-      responses:
-        "200":
-          description: "Successful request"
-  /subscription/{userId}/organisation:
-    get:
-      tags:
-      - "Subscription"
-      summary: "Return a list of organisation that the account subscribed to"
-      description: ""
-      operationId: "getOrganisationsByUserId"
-      parameters:
-      - in: "integer"
-        name: "userId"
-        description: "The user ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          # schema:
-          #   $ref: "#/definitions/CellState"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-  /subscription/{userId}/{organisationId}:
-    get:
-      tags:
-      - "Subscription"
-      summary: "Return information about the subscription of a user to an organisation"
-      description: ""
-      operationId: "getOrganisationById"
-      parameters:
-      - in: "integer"
-        name: "userId"
-        description: "The user ID"
-        required: true
-      - in: "integer"
-        name: "organisationId"
-        description: "The organisation ID"
-        required: true
-      responses:
-        "200":
-          description: "Successful request"
-          # schema:
-          #   $ref: "#/definitions/CellState"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    put:
-      tags:
-      - "Subscription"
-      summary: "Add an organisation into the user organisation subscription list"
-      description: ""
-      operationId: "updateOrganisationFromUserSubscriptionList"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "integer"
-        name: "userId"
-        description: "The user ID"
-        required: true
-      - in: "integer"
-        name: "organisationId"
-        description: "The organisation ID"
-        required: true
-        # schema:
-        #   $ref: "#/definitions/CellState"
-      responses:
-        "200":
-          description: "Successful request"
-      # security:
-      # - petstore_auth:
-      #   - "write:pets"
-      #   - "read:pets"
-    delete:
-      tags:
-      - "Subscription"
-      summary: "Remove an organisation into the user organisation subscription list"
-      description: ""
-      operationId: "removeOrganisationFromUserSubscriptionList"
-      consumes:
-      - "application/json"
-      - "application/xml"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "integer"
-        name: "userId"
-        description: "The user ID"
-        required: true
-      - in: "integer"
-        name: "organisationId"
-        description: "The organisation ID"
-        required: true
-        # schema:
-        #   $ref: "#/definitions/CellState"
-      responses:
-        "200":
-          description: "Successful request"
+  #   put:
+  #     tags:
+  #     - "Cell State of Health"
+  #     summary: "Update an existing health state of a cell"
+  #     description: ""
+  #     operationId: "updateCellStateOfHealth"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "bmuId"
+  #       description: "The Battery Management Unit ID"
+  #       required: true
+  #     - in: "integer"
+  #       name: "cmuId"
+  #       description: "The Cell Monitor Unit ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "A new battery state of health object with the updated properties"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/CellSoh"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{cmuId}/cells:
+  #   get:
+  #     tags:
+  #     - "Cells"
+  #     summary: "Return the information about all the cell of a cell monitor unit"
+  #     description: ""
+  #     operationId: "getCells"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "cmuId"
+  #       description: "The Cell Monitor Unit ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/Cells"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  #   post:
+  #     tags:
+  #     - "Cells"
+  #     summary: "Add new cells to the cell monitor unit"
+  #     description: ""
+  #     operationId: "postCells"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "string"
+  #       name: "cmuId"
+  #       description: "The Cell Monitor Unit ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "An array of cell IDs"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/Cells"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{cmuId}/{cellId}:
+  #   get:
+  #     tags:
+  #     - "Cells"
+  #     summary: "Return the information about a cell of a cell monitor unit"
+  #     description: ""
+  #     operationId: "getCell"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "cmuId"
+  #       description: "The Cell Monitor Unit ID"
+  #       required: true
+  #     - in: "integer"
+  #       name: "cellId"
+  #       description: "The Cell ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/Cell"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  #   put:
+  #     tags:
+  #     - "Cells"
+  #     summary: "Update an existing cell information"
+  #     description: ""
+  #     operationId: "updateCell"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "cmuId"
+  #       description: "The Cell Monitor Unit ID"
+  #       required: true
+  #     - in: "integer"
+  #       name: "cellId"
+  #       description: "The Cell ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "A new cell object with the updated properties"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/Cell"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /{cellId}/cell-state:
+  #   get:
+  #     tags:
+  #     - "Cell State"
+  #     summary: "Return the information about the cell state of a cell"
+  #     description: ""
+  #     operationId: "getCellState"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "cellId"
+  #       description: "The cell ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         schema:
+  #           $ref: "#/definitions/CellState"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  #   put:
+  #     tags:
+  #     - "Cell State"
+  #     summary: "Update an existing cell state of a cell"
+  #     description: ""
+  #     operationId: "updateCellState"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "cellId"
+  #       description: "The cell ID"
+  #       required: true
+  #     - in: "body"
+  #       name: "body"
+  #       description: "A new cell state object with the updated properties"
+  #       required: true
+  #       schema:
+  #         $ref: "#/definitions/CellState"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  # /subscription/{userId}/organisation:
+  #   get:
+  #     tags:
+  #     - "Subscription"
+  #     summary: "Return a list of organisation that the account subscribed to"
+  #     description: ""
+  #     operationId: "getOrganisationsByUserId"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "userId"
+  #       description: "The user ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         # schema:
+  #         #   $ref: "#/definitions/CellState"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  # /subscription/{userId}/{organisationId}:
+  #   get:
+  #     tags:
+  #     - "Subscription"
+  #     summary: "Return information about the subscription of a user to an organisation"
+  #     description: ""
+  #     operationId: "getOrganisationById"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "userId"
+  #       description: "The user ID"
+  #       required: true
+  #     - in: "integer"
+  #       name: "organisationId"
+  #       description: "The organisation ID"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #         # schema:
+  #         #   $ref: "#/definitions/CellState"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  #   put:
+  #     tags:
+  #     - "Subscription"
+  #     summary: "Add an organisation into the user organisation subscription list"
+  #     description: ""
+  #     operationId: "updateOrganisationFromUserSubscriptionList"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "userId"
+  #       description: "The user ID"
+  #       required: true
+  #     - in: "integer"
+  #       name: "organisationId"
+  #       description: "The organisation ID"
+  #       required: true
+  #       # schema:
+  #       #   $ref: "#/definitions/CellState"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
+  #     # security:
+  #     # - petstore_auth:
+  #     #   - "write:pets"
+  #     #   - "read:pets"
+  #   delete:
+  #     tags:
+  #     - "Subscription"
+  #     summary: "Remove an organisation into the user organisation subscription list"
+  #     description: ""
+  #     operationId: "removeOrganisationFromUserSubscriptionList"
+  #     consumes:
+  #     - "application/json"
+  #     - "application/xml"
+  #     produces:
+  #     - "application/xml"
+  #     - "application/json"
+  #     parameters:
+  #     - in: "integer"
+  #       name: "userId"
+  #       description: "The user ID"
+  #       required: true
+  #     - in: "integer"
+  #       name: "organisationId"
+  #       description: "The organisation ID"
+  #       required: true
+  #       # schema:
+  #       #   $ref: "#/definitions/CellState"
+  #     responses:
+  #       "200":
+  #         description: "Successful request"
       # security:
       # - petstore_auth:
       #   - "write:pets"
@@ -1541,268 +1541,268 @@ paths:
 #     name: "api_key"
 #     in: "header"
 definitions:
-  Charger:
-    type: "object"
-    properties:
-      chargerId:
-        type: "integer"
-        format: "int64"
-      totalPower:
-        type: "integer"
-        format: "int64"
-      powerExport:
-        type: "integer"
-        format: "int64"
-      externalPower:
-        type: "integer"
-        format: "int64"
-    xml:
-      name: "Charger"
-  Chargers:
-    type: "object"
-    properties:
-      chargerIds:
-        type: "array"
-        items:
-          type: "integer"
-    xml:
-      name: "Chargers"
-  ChargerState:
-    type: "object"
-    properties:
-      current:
-        type: "integer"
-        format: "int64"
-      voltage:
-        type: "integer"
-        format: "int64"
-      temperature:
-        type: "integer"
-        format: "int64"
-      pointOfTime:
-        type: "integer"
-        format: "int64"
-    xml:
-      name: "ChargerState"
-  MotorController:
-    type: "object"
-    properties:
-      motorId:
-        type: "integer"
-        format: "int64"
-      averageTemp:
-        type: "integer"
-        format: "int64"
-      voltage:
-        type: "integer"
-        format: "int64"
-      amps:
-        type: "integer"
-        format: "int64"
-    xml:
-      name: "MotorController"
-  MotorControllers:
-    type: "object"
-    properties:
-      motorIds:
-        type: "string"
-    xml:
-      name: "MotorControllers"
-  MotorState:
-    type: "object"
-    properties:
-      current:
-        type: "integer"
-        format: "int64"
-      voltage:
-        type: "integer"
-        format: "int64"
-      tempurature:
-        type: "integer"
-        format: "int64"
-      pointOfTime:
-        type: "integer"
-        format: "int64"
-    xml:
-      name: "MotorState"
-  BMUs:
-    type: "object"
-    properties:
-      bmuId:
-        type: "array"
-        items:
-          type: "integer"
-    xml:
-      name: "BMUs"
-  BMU:
-    type: "object"
-    properties:
-      bmuId:
-        type: "integer"
-        format: "int64"
-      stateOfHealth:
-        type: "string"
-      dateManucatured:
-        type: "string"
-      mainFacility:
-        type: "string"
-      type:
-        type: "string"
-      count:
-        type: "integer"
-        format: "int64"
-    xml:
-      name: "BMU"
-  BatterySOh:
-    type: "object"
-    properties:
-      current:
-        type: "integer"
-        format: "int64"
-      voltage:
-        type: "integer"
-        format: "int64"
-      tempurature:
-        type: "integer"
-        format: "int64"
-      pointOfTime:
-        type: "integer"
-        format: "int64"
-    xml:
-      name: "BatterySOh"
-  CMUs:
-    type: "object"
-    properties:
-      cmuId:
-        type: "array"
-        items:
-          type: "integer"
-    xml:
-      name: "CMUs"
-  CMU:
-    type: "object"
-    properties:
-      cmuId:
-        type: "integer"
-        format: "int64"
-      stateOfHealth:
-        type: "string"
-      dateManucatured:
-        type: "string"
-      mainFacility:
-        type: "string"
-    xml:
-      name: "CMU"
-  CellSoh:
-    type: "object"
-    properties:
-      current:
-        type: "integer"
-        format: "int64"
-      voltage:
-        type: "integer"
-        format: "int64"
-      tempurature:
-        type: "integer"
-        format: "int64"
-      pointOfTime:
-        type: "integer"
-        format: "int64"
-    xml:
-      name: "CellSoh"
-  Cells:
-    type: "object"
-    properties:
-      cellId:
-        type: "array"
-        items:
-          type: "integer"
-    xml:
-      name: "Cells"
-  Cell:
-    type: "object"
-    properties:
-      cellId:
-        type: "integer"
-        format: "int64"
-      voltageMax:
-        type: "integer"
-        format: "int64"
-      voltageMin:
-        type: "integer"
-        format: "int64"
-      manufacturer:
-        type: "string"
-      batch:
-        type: "string"
-      dateManucatured:
-        type: "string"
-    xml:
-      name: "Cell"
-  CellState:
-    type: "object"
-    properties:
-      current:
-        type: "integer"
-        format: "int64"
-      voltage:
-        type: "integer"
-        format: "int64"
-      tempurature:
-        type: "integer"
-        format: "int64"
-      pointOfTime:
-        type: "integer"
-        format: "int64"
-    xml:
-      name: "CellState"
-  Vehicles:
-    type: "object"
-    properties:
-      organisation:
-        type: "string"
-        example: "Prohelion"
-      models:
-        type: "array"
-        items:
-          type: "string"
-      photoUrls:
-        type: "array"
-        xml:
-          name: "photoUrl"
-          wrapped: true
-        items:
-          type: "string"
-    xml:
-      name: "Vehicles"
-  Vehicle:
-    type: "object"
-    properties:
-      vehicleId:
-        type: "integer"
-        format: "int64"
-      organisation:
-        type: "string"
-        example: "Prohelion"
-      model:
-        type: "string"
-        example: "BMW"
-      photoUrls:
-        type: "array"
-        xml:
-          name: "photoUrl"
-          wrapped: true
-        items:
-          type: "string"
-      status:
-        type: "string"
-        description: "status about the vehcile"
-        enum:
-        - "available"
-        - "pending"
-        - "out of service"
-    xml:
-      name: "Vehicle"
+  # Charger:
+  #   type: "object"
+  #   properties:
+  #     chargerId:
+  #       type: "integer"
+  #       format: "int64"
+  #     totalPower:
+  #       type: "integer"
+  #       format: "int64"
+  #     powerExport:
+  #       type: "integer"
+  #       format: "int64"
+  #     externalPower:
+  #       type: "integer"
+  #       format: "int64"
+  #   xml:
+  #     name: "Charger"
+  # Chargers:
+  #   type: "object"
+  #   properties:
+  #     chargerIds:
+  #       type: "array"
+  #       items:
+  #         type: "integer"
+  #   xml:
+  #     name: "Chargers"
+  # ChargerState:
+  #   type: "object"
+  #   properties:
+  #     current:
+  #       type: "integer"
+  #       format: "int64"
+  #     voltage:
+  #       type: "integer"
+  #       format: "int64"
+  #     temperature:
+  #       type: "integer"
+  #       format: "int64"
+  #     pointOfTime:
+  #       type: "integer"
+  #       format: "int64"
+  #   xml:
+  #     name: "ChargerState"
+  # MotorController:
+  #   type: "object"
+  #   properties:
+  #     motorId:
+  #       type: "integer"
+  #       format: "int64"
+  #     averageTemp:
+  #       type: "integer"
+  #       format: "int64"
+  #     voltage:
+  #       type: "integer"
+  #       format: "int64"
+  #     amps:
+  #       type: "integer"
+  #       format: "int64"
+  #   xml:
+  #     name: "MotorController"
+  # MotorControllers:
+  #   type: "object"
+  #   properties:
+  #     motorIds:
+  #       type: "string"
+  #   xml:
+  #     name: "MotorControllers"
+  # MotorState:
+  #   type: "object"
+  #   properties:
+  #     current:
+  #       type: "integer"
+  #       format: "int64"
+  #     voltage:
+  #       type: "integer"
+  #       format: "int64"
+  #     tempurature:
+  #       type: "integer"
+  #       format: "int64"
+  #     pointOfTime:
+  #       type: "integer"
+  #       format: "int64"
+  #   xml:
+  #     name: "MotorState"
+  # BMUs:
+  #   type: "object"
+  #   properties:
+  #     bmuId:
+  #       type: "array"
+  #       items:
+  #         type: "integer"
+  #   xml:
+  #     name: "BMUs"
+  # BMU:
+  #   type: "object"
+  #   properties:
+  #     bmuId:
+  #       type: "integer"
+  #       format: "int64"
+  #     stateOfHealth:
+  #       type: "string"
+  #     dateManucatured:
+  #       type: "string"
+  #     mainFacility:
+  #       type: "string"
+  #     type:
+  #       type: "string"
+  #     count:
+  #       type: "integer"
+  #       format: "int64"
+  #   xml:
+  #     name: "BMU"
+  # BatterySOh:
+  #   type: "object"
+  #   properties:
+  #     current:
+  #       type: "integer"
+  #       format: "int64"
+  #     voltage:
+  #       type: "integer"
+  #       format: "int64"
+  #     tempurature:
+  #       type: "integer"
+  #       format: "int64"
+  #     pointOfTime:
+  #       type: "integer"
+  #       format: "int64"
+  #   xml:
+  #     name: "BatterySOh"
+  # CMUs:
+  #   type: "object"
+  #   properties:
+  #     cmuId:
+  #       type: "array"
+  #       items:
+  #         type: "integer"
+  #   xml:
+  #     name: "CMUs"
+  # CMU:
+  #   type: "object"
+  #   properties:
+  #     cmuId:
+  #       type: "integer"
+  #       format: "int64"
+  #     stateOfHealth:
+  #       type: "string"
+  #     dateManucatured:
+  #       type: "string"
+  #     mainFacility:
+  #       type: "string"
+  #   xml:
+  #     name: "CMU"
+  # CellSoh:
+  #   type: "object"
+  #   properties:
+  #     current:
+  #       type: "integer"
+  #       format: "int64"
+  #     voltage:
+  #       type: "integer"
+  #       format: "int64"
+  #     tempurature:
+  #       type: "integer"
+  #       format: "int64"
+  #     pointOfTime:
+  #       type: "integer"
+  #       format: "int64"
+  #   xml:
+  #     name: "CellSoh"
+  # Cells:
+  #   type: "object"
+  #   properties:
+  #     cellId:
+  #       type: "array"
+  #       items:
+  #         type: "integer"
+  #   xml:
+  #     name: "Cells"
+  # Cell:
+  #   type: "object"
+  #   properties:
+  #     cellId:
+  #       type: "integer"
+  #       format: "int64"
+  #     voltageMax:
+  #       type: "integer"
+  #       format: "int64"
+  #     voltageMin:
+  #       type: "integer"
+  #       format: "int64"
+  #     manufacturer:
+  #       type: "string"
+  #     batch:
+  #       type: "string"
+  #     dateManucatured:
+  #       type: "string"
+  #   xml:
+  #     name: "Cell"
+  # CellState:
+  #   type: "object"
+  #   properties:
+  #     current:
+  #       type: "integer"
+  #       format: "int64"
+  #     voltage:
+  #       type: "integer"
+  #       format: "int64"
+  #     tempurature:
+  #       type: "integer"
+  #       format: "int64"
+  #     pointOfTime:
+  #       type: "integer"
+  #       format: "int64"
+  #   xml:
+  #     name: "CellState"
+  # Vehicles:
+  #   type: "object"
+  #   properties:
+  #     organisation:
+  #       type: "string"
+  #       example: "Prohelion"
+  #     models:
+  #       type: "array"
+  #       items:
+  #         type: "string"
+  #     photoUrls:
+  #       type: "array"
+  #       xml:
+  #         name: "photoUrl"
+  #         wrapped: true
+  #       items:
+  #         type: "string"
+  #   xml:
+  #     name: "Vehicles"
+  # Vehicle:
+  #   type: "object"
+  #   properties:
+  #     vehicleId:
+  #       type: "integer"
+  #       format: "int64"
+  #     organisation:
+  #       type: "string"
+  #       example: "Prohelion"
+  #     model:
+  #       type: "string"
+  #       example: "BMW"
+  #     photoUrls:
+  #       type: "array"
+  #       xml:
+  #         name: "photoUrl"
+  #         wrapped: true
+  #       items:
+  #         type: "string"
+  #     status:
+  #       type: "string"
+  #       description: "status about the vehcile"
+  #       enum:
+  #       - "available"
+  #       - "pending"
+  #       - "out of service"
+  #   xml:
+  #     name: "Vehicle"
   Workspace:
     type: object
     properties:
