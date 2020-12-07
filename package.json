@@ -1,5 +1,5 @@
 {
-  "name": "swagger-server",
+  "name": "swagger-api-profinity",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -15,5 +15,22 @@
     "pug": "2.0.0-beta11",
     "swagger-ui-express": "^4.1.4",
     "yamljs": "^0.3.0"
-  }
+  },
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JadenBui/swagger-api-profinity.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JadenBui/swagger-api-profinity/issues"
+  },
+  "homepage": "https://github.com/JadenBui/swagger-api-profinity#readme",
+  "description": ""
 }
